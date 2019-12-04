@@ -1,1 +1,34 @@
-<p>movies works!</p>
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <h1>Movies</h1>
+    </div>
+    <div class="col-md-4" *ngFor="let movie of movies; let i = index">
+      <!-- Card Dark -->
+      <a class="card" (click)="selectedDetailMovie(movie)">
+        <!-- Card image -->
+        <div class="view overlay">
+          <img class="card-img-top" [src]="hostPhoto + movie.poster_path" alt="{{movie.original_title}}">
+          <a>
+            <div class="mask rgba-white-slight"></div>
+          </a>
+        </div>
+
+        <!-- Card content -->
+        <div class="card-body elegant-color white-text rounded-bottom">
+          <!-- Title -->
+          <h4 class="card-title">{{movie.original_title}}</h4>
+          <hr class="hr-light">
+          <!-- Text -->
+          <p class="card-text white-text mb-4">{{movie.overview}}</p>
+          <!-- Link -->
+          <a data-toggle="modal" data-target="#modalDeleteDestination" class="white-text d-flex justify-content-end">
+            <h5>Read more <i
+              class="fas fa-angle-double-right"></i></h5></a>
+        </div>
+
+      </a>
+      <!-- Card Dark -->
+    </div>
+  </div>
+</div>
